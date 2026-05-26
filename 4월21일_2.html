@@ -1,34 +1,9 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>relative 배치</title>
+<title>URL에 자바스크립트 작성</title>
 <style>
-    div {
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-        border: 1px solid lightgrey;
-        text-align: center;
-        color: white;
-        background-color: red;
-    }
-    #down:hover {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        background: green;
-    }
-    #up:hover {
-        position: relative;
-        left: 20px;
-        top: -20px;
-        background: green;
-    }
     .top-bar{
 
     width:100%;
@@ -81,11 +56,7 @@
         0 18px 35px rgba(53,104,255,0.35);
 }
 </style>
-
-
-
 </head>
-
 <body><div class="top-bar">
 
         <button class="back-btn"
@@ -96,23 +67,8 @@
         </button>
 
     </div>
-
-<h3>상대 배치, relative</h3>
-
+<h3>링크의 href에 자바스크립트 작성</h3>
 <hr>
-
-	<div>T</div>
-
-	<div id="down">h</div>
-
-	<div >a</div>
-
-	<div>n</div>
-
-	<div id="up">k</div>
-
-	<div>s</div>
-
+<a href="javascript:confirm('클릭하셨어요?')">클릭해보세요</a>
 </body>
-
 </html>

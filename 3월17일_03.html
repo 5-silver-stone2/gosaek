@@ -1,35 +1,15 @@
 <!DOCTYPE html>
-
 <html>
-
-<head>
-
-<meta charset="UTF-8">
-
-<title>relative 배치</title>
-<style>
-    div {
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-        border: 1px solid lightgrey;
-        text-align: center;
-        color: white;
-        background-color: red;
-    }
-    #down:hover {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        background: green;
-    }
-    #up:hover {
-        position: relative;
-        left: 20px;
-        top: -20px;
-        background: green;
-    }
-    .top-bar{
+    <head>
+        <title>레이아웃태그</title>
+        <style>
+            #pname{
+                color: blue;
+            }
+            *{
+                color: brown;
+            }
+            .top-bar{
 
     width:100%;
 
@@ -80,13 +60,9 @@
     box-shadow:
         0 18px 35px rgba(53,104,255,0.35);
 }
-</style>
-
-
-
-</head>
-
-<body><div class="top-bar">
+        </style>
+    </head>
+    <body><div class="top-bar">
 
         <button class="back-btn"
         onclick="location.href='../index.html'">
@@ -96,23 +72,22 @@
         </button>
 
     </div>
+        <header><h1 id="pname">my</h1><hr></header>
+        <div><p>dxcvbdcbv</p></div>
+        <div>
+            <ul>
+                <li>html.5</li>
+                <li>css3</li>
+                <li>javascript</li>
+            </ul>
+        </div>
+        <hr>
+        
+        <section><h1>dxcvbdcbv</h1>
+        <p>dfvsfjvhdjfvbjsdlfgvis</p> </section>
 
-<h3>상대 배치, relative</h3>
+        <hr>
 
-<hr>
-
-	<div>T</div>
-
-	<div id="down">h</div>
-
-	<div >a</div>
-
-	<div>n</div>
-
-	<div id="up">k</div>
-
-	<div>s</div>
-
-</body>
-
+        <p>dfvsfjvhdjfvbjsdlfgvis</p>
+    </body>
 </html>

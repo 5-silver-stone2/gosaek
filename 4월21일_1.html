@@ -1,34 +1,9 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>relative 배치</title>
+<title>이벤트 리스너 속성에 자바스크립트 코드</title>
 <style>
-    div {
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-        border: 1px solid lightgrey;
-        text-align: center;
-        color: white;
-        background-color: red;
-    }
-    #down:hover {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        background: green;
-    }
-    #up:hover {
-        position: relative;
-        left: 20px;
-        top: -20px;
-        background: green;
-    }
     .top-bar{
 
     width:100%;
@@ -81,11 +56,10 @@
         0 18px 35px rgba(53,104,255,0.35);
 }
 </style>
+<script src="20260421.js">
 
-
-
+</script>
 </head>
-
 <body><div class="top-bar">
 
         <button class="back-btn"
@@ -96,23 +70,29 @@
         </button>
 
     </div>
-
-<h3>상대 배치, relative</h3>
-
+<h3>마우스 올려 보세요</h3>
 <hr>
+<img src="이미지/apple.png" alt="이미지" onmouseover="over(this)" onmouseout="out(this)">
 
-	<div>T</div>
+<script>
+    function over(obj) {
+        obj.src='이미지/banana.png';
+    }
+    function out(obj) {
+        obj.src='이미지/apple.png';
+    }
+    document.write("<h3>Welcome!</h3>");
+    document.write('abc'+23+'<br>');
+    document.write(23+'abc'+'<br>');
+    document.write(23 + 45 + 'abc<br>');
+    document.write('abc' + 23 + 45 + '<br>');
+    document.write('a'>'b');
+    document.write('<br>');
+    let x=5, y=3;
+    let big = (x>y) ? x-y : y-x;
+    document.write(big);
 
-	<div id="down">h</div>
-
-	<div >a</div>
-
-	<div>n</div>
-
-	<div id="up">k</div>
-
-	<div>s</div>
-
+    </script>
 </body>
-
 </html>
+

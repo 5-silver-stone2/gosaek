@@ -1,34 +1,9 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>relative 배치</title>
+<title>for 문</title>
 <style>
-    div {
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-        border: 1px solid lightgrey;
-        text-align: center;
-        color: white;
-        background-color: red;
-    }
-    #down:hover {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        background: green;
-    }
-    #up:hover {
-        position: relative;
-        left: 20px;
-        top: -20px;
-        background: green;
-    }
     .top-bar{
 
     width:100%;
@@ -81,11 +56,7 @@
         0 18px 35px rgba(53,104,255,0.35);
 }
 </style>
-
-
-
 </head>
-
 <body><div class="top-bar">
 
         <button class="back-btn"
@@ -96,23 +67,20 @@
         </button>
 
     </div>
-
-<h3>상대 배치, relative</h3>
-
+<h3>for 문으로 10px~35px 크기 출력</h3>
 <hr>
+<script>
+	// 이곳에 자바스크립트 코드를 작성하라.
+    for (let size=10; size<=35 ; size+=5) {
+        document.write("<span ");
+        document.write("style='font-size:" + size + "px;'>");
+        document.write("px"); //abc
+        document.write("</span>");
 
-	<div>T</div>
 
-	<div id="down">h</div>
-
-	<div >a</div>
-
-	<div>n</div>
-
-	<div id="up">k</div>
-
-	<div>s</div>
-
+    }
+</script>
+<!-- <span style='font-size: 5px;'>abc</span> -->
 </body>
-
 </html>
+for, while, do~while
