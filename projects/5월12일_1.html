@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu1:hover {
+            color: blue;
+        }
+        #menu2:hover {
+            color: blue;
+        }
+        #menu3:hover {
+            color: blue;
+        }
+        #name1 {
+            text-align:center;
+        }
+        #name2 {
+            text-align: right;
+        }
+        #name3 {
+            text-align:center;
+        }
+        #input1 {
+            width: 300px; /* 폼의 가로 너비 설정 */
+            margin: 0 auto; /* 좌우 마진을 auto로 설정하여 중앙 정렬 */
+        }
+        #end {
+            text-align:center;
+        }
+        .top-bar{
+
+    width:100%;
+
+    padding:30px 50px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#eef3f9;
+}
+
+/* 돌아가기 버튼 */
+
+.back-btn{
+
+    width:220px;
+    height:65px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:black;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:#3568ff;
+
+    box-shadow:
+        0 18px 35px rgba(53,104,255,0.35);
+}
+    </style>
+</head>
+<body><div class="top-bar">
+
+        <button class="back-btn"
+        onclick="location.href='../index.html'">
+
+            ← 메인으로 돌아가기
+
+        </button>
+
+    </div>
+    <div style="display: flex; gap: 600px;">
+        <div style="flex: 1; border: 1px solid black">
+            <h4>my profile</h4>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <div style="flex: 1; border: 1px solid rgb(0, 0, 0);">
+                <h4 id="menu1">메뉴1</h4>
+            </div>
+            <div style="flex: 1; border: 1px solid rgb(0, 0, 0);">
+                <h4 id="menu2">메뉴2</h4>
+            </div>
+            <div style="flex: 1; border: 1px solid rgb(0, 0, 0);">
+                <h4 id="menu3">메뉴3</h4>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div style="display: flex; align-items: center; gap: 30px;">
+        <img id="img1" src="이미지/미도리아.webp" width="200">
+        <div>
+        <h1>안녕하세요,미도리야 입니다</h1>
+        <p>최고의 히어로가 되는것이 꿈 입니다</p>
+        <button>버튼</button>
+        </div>
+    </div>
+    <hr>
+    <h2 id="name1">관심분야</h2>
+    <div style="display: flex; gap: 10px;">
+        <div style="flex: 1; border: 1px solid rgb(0, 0, 0);">
+            <h3>안녕하세요,미도리야 입니다</h3>
+            <p>꿈</p>
+        </div>
+        <div style="flex: 1; border: 1px solid rgb(0, 0, 0);">
+            <h3>안녕하세요,미도리야 입니다</h3>
+            <p>꿈</p>
+        </div>
+        <div style="flex: 1; border: 1px solid rgb(0, 0, 0);">
+            <h3>안녕하세요,미도리야 입니다</h3>
+            <p>꿈</p>
+        </div>
+    </div>
+    <hr>
+    <h2 id="name3">연락처</h2>
+    <div id="input1">
+        <form>
+            이름 입력판: <input type="text" name="uname"><br>
+            메시지 입력판: <input type="text" name="uname"><br>
+            <a href="javascript:confirm('이름을 입력해 주세요!')">
+                <button type="submit">보내기 버튼</button>
+            </a>
+            
+        </form>
+    </div>
+    <h5 id="end">C 2025</h5>
+</body>
+</html>

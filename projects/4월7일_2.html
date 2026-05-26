@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>relative 배치</title>
+<style>
+    div {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        border: 1px solid lightgrey;
+        text-align: center;
+        color: white;
+        background-color: red;
+    }
+    #down:hover {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background: green;
+    }
+    #up:hover {
+        position: relative;
+        left: 20px;
+        top: -20px;
+        background: green;
+    }
+    .top-bar{
+
+    width:100%;
+
+    padding:30px 50px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#eef3f9;
+}
+
+/* 돌아가기 버튼 */
+
+.back-btn{
+
+    width:220px;
+    height:65px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:black;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:#3568ff;
+
+    box-shadow:
+        0 18px 35px rgba(53,104,255,0.35);
+}
+</style>
+
+
+
+</head>
+
+<body><div class="top-bar">
+
+        <button class="back-btn"
+        onclick="location.href='../index.html'">
+
+            ← 메인으로 돌아가기
+
+        </button>
+
+    </div>
+
+<h3>상대 배치, relative</h3>
+
+<hr>
+
+	<div>T</div>
+
+	<div id="down">h</div>
+
+	<div >a</div>
+
+	<div>n</div>
+
+	<div id="up">k</div>
+
+	<div>s</div>
+
+</body>
+
+</html>

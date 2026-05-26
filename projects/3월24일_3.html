@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            #header {
+                width: 520px;
+                background-color: rgb(229, 245, 9);
+                border: 3px solid gray;
+                text-align: center;
+            }
+            #footer {
+                width: 520px;
+                background-color: rgb(230, 247, 5);
+                border: 3px solid gray;
+                text-align: center;
+
+            }
+            #wrap {
+                width: 520px;
+                background-color: aqua;
+                text-align: center;
+                overflow: hidden;
+                border:3px solid rgb(55, 12, 211)
+            }
+            #content {
+                width: 350px;
+                border: 1px solid red;
+                float: left;
+            }
+            #side_banner {
+                border:6px solid red;
+                float: left;
+            }
+            ul li.menu {                        
+                color:blue;
+                font-weight: bold;
+                font-size: 30px;
+            }
+            .top-bar{
+
+    width:100%;
+
+    padding:30px 50px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#eef3f9;
+}
+
+/* 돌아가기 버튼 */
+
+.back-btn{
+
+    width:220px;
+    height:65px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:black;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:#3568ff;
+
+    box-shadow:
+        0 18px 35px rgba(53,104,255,0.35);
+}
+        </style>
+    </head>
+    <body>
+        <div class="top-bar">
+
+        <button class="back-btn"
+        onclick="location.href='../index.html'">
+
+            ← 메인으로 돌아가기
+
+        </button>
+
+    </div>
+    
+    <div id="header">
+        <h1>HEADER</h1>
+    </div>
+
+    <div id="wrap">
+        <div id="content">
+            <h1>CONTENT</h1>
+            <ul>
+                <li class="menu">menu1</li>
+                <li>menu2</li>
+                <li class="menu">menu3</li>
+                <li>menu4</li>
+                <li class="menu">menu5</li>
+            </ul>
+            <ol>
+                <li class="menu">menu1</li>
+                <li>menu2</li>
+                <li class="menu">menu3</li>
+                <li>menu4</li>
+                <li class="menu">menu5</li>
+            </ol>
+        </div>
+        <div id="side_banner">
+            <h1>BANNER</h1>
+            <a href="https://gosaek-h.goesw.kr/gosaek-h/main.do" target="_blank"><img src="https://gosaek-h.goesw.kr/images/web/gosaek-h/common/logo.png"></a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <h1>FOOTER</h1>
+    </div>
+    
+    </body>
+</html>

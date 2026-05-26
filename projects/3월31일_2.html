@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            #content {
+                width: 300px;
+            }
+            ul li {
+                list-style: none;
+                border: 1px solid#cccccc;
+                padding: 10px;
+                background-color: #efefef;
+                font-size: 20px;
+            }
+            ul li a {
+                color: #000000;
+            }
+            ul li:nth-child(2n + 1) {/*even == 2n+1*/
+                background-color: aqua;
+            }
+            ul li:first-child, ul li:last-child {
+                background-color: yellow;
+            }
+            ul li:first-child {
+                border-radius: 10px 10px 0 0;
+            }
+            ul li:last-child {
+                border-radius: 0 0 10px 10px;
+            }
+            .top-bar{
+
+    width:100%;
+
+    padding:30px 50px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#eef3f9;
+}
+
+/* 돌아가기 버튼 */
+
+.back-btn{
+
+    width:220px;
+    height:65px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:black;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:#3568ff;
+
+    box-shadow:
+        0 18px 35px rgba(53,104,255,0.35);
+}
+        </style>
+    </head>
+    <body>
+        <div class="top-bar">
+
+        <button class="back-btn"
+        onclick="location.href='../index.html'">
+
+            ← 메인으로 돌아가기
+
+        </button>
+
+    </div>
+    
+
+    <div id="content">
+        <ul>
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+            <li><a href="#">menu5</a></li>
+            <li><a href="#">menu6</a></li>
+            <li><a href="#">menu7</a></li>
+            <li><a href="#">menu8</a></li>
+        </ul>
+    </div>
+
+    
+    </body>
+</html>

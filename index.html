@@ -1,17 +1,660 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+
 <head>
-<title>플레이리스트</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PORTFOLIO</title>
+
+<style>
+
+/* =========================
+   기본 설정
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Pretendard', sans-serif;
+}
+
+body{
+    background:#edf2f9;
+    overflow-x:hidden;
+    color:#222;
+}
+
+/* =========================
+   메인 페이지
+========================= */
+
+.container{
+    width:1300px;
+    margin:auto;
+    padding:50px 0;
+}
+
+/* =========================
+   타이틀
+========================= */
+
+.main-title{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.main-title h1{
+
+    display:inline-block;
+
+    padding:25px 100px;
+
+    background:linear-gradient(
+        135deg,
+        #4a90ff,
+        #5d6dff
+    );
+
+    color:white;
+
+    font-size:40px;
+    letter-spacing:4px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 40px rgba(74,144,255,0.3);
+}
+
+/* =========================
+   월 영역
+========================= */
+
+.month-section{
+    margin-bottom:80px;
+}
+
+.month-section h2{
+
+    margin-bottom:25px;
+
+    color:#304674;
+
+    font-size:30px;
+
+    border-bottom:3px solid #c8d8f0;
+
+    padding-bottom:10px;
+}
+
+/* =========================
+   카드 정렬
+========================= */
+
+.card-container{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   링크 스타일 제거
+========================= */
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================
+   카드
+========================= */
+
+.card{
+
+    width:380px;
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:0.35s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.08);
+
+    position:relative;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #4a90ff,
+        #6a5cff
+    );
+
+    transform:scaleX(0);
+
+    transition:0.35s;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.02);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,0.15);
+
+    background:#f8fbff;
+}
+
+.card:hover::before{
+    transform:scaleX(1);
+}
+
+/* =========================
+   이미지
+========================= */
+
+.card img{
+
+    width:100%;
+    height:230px;
+
+    object-fit:cover;
+}
+
+/* =========================
+   카드 텍스트
+========================= */
+
+.card-content{
+    padding:28px;
+}
+
+.card-content h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+    color:#2a3d68;
+}
+
+.card-content p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+/* 버튼 */
+
+.card-button{
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    background:#edf4ff;
+
+    color:#3d73ff;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.card:hover .card-button{
+
+    background:#4a90ff;
+    color:white;
+}
+
+/* =========================
+   푸터
+========================= */
+
+.footer{
+
+    margin-top:80px;
+
+    text-align:center;
+
+    color:#7a8aa8;
+}
+
+/* =========================
+   반응형
+========================= */
+
+@media(max-width:1400px){
+
+    .container{
+        width:95%;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .card-container{
+        flex-direction:column;
+    }
+}
+
+</style>
+
 </head>
+
 <body>
-<h1>                   플레이 리스트</h1>
-<ul>
-    <li><h2>캐논</h2><audio src="음악/jungmiandgi-canon_piano-191927.mp3" controls="controls" autoplay="autoplay" loop="loop"></audio></li>
-    <li><h2>Peace sign</h2><audio src="음악/米津玄師 - ピースサイン , Kenshi Yonezu - Peace Sign - Kenshi Yonezu 米津玄師 (128k).mp3" controls="controls" autoplay="autoplay" loop="loop"></audio></li>
-    <li><h2>Lemon</h2><audio src="음악/米津玄師 Kenshi Yonezu - Lemon - Kenshi Yonezu 米津玄師 (128k).mp3" controls="controls" autoplay="autoplay" loop="loop"></audio></li>
-    <li><h2>Lady</h2><audio src="음악/米津玄師 Kenshi Yonezu - Lemon - Kenshi Yonezu 米津玄師 (128k).mp3" controls="controls" autoplay="autoplay" loop="loop"></audio></li>
-    <li><h2>Bow and arrow</h2><audio src="음악/米津玄師 Kenshi Yonezu - BOW AND ARROW - Kenshi Yonezu 米津玄師 (128k).mp3" controls="controls" autoplay="autoplay" loop="loop"></audio></li>
-</ul>
+
+<div class="container">
+
+    <!-- =========================
+         메인 타이틀
+    ========================= -->
+
+    <div class="main-title">
+        <h1>PORTFOLIO</h1>
+    </div>
+
+    <!-- =========================
+         3월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>3월</h2>
+
+        <div class="card-container">
+
+            <!-- 카드 1 : 플레이리스트 -->
+
+            <a class="card-link"
+            href="http://127.0.0.1:5500/projects/3%EC%9B%9417%EC%9D%BC_1(%ED%94%8C%EB%A0%88%EC%9D%B4%20%EB%A6%AC%EC%8A%A4%ED%8A%B8).html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f">
+
+                    <div class="card-content">
+
+                        <h3>플레이 리스트</h3>
+
+                        <p>
+                            음악 플레이 리스트 웹 프로젝트<br>
+                            HTML / CSS 기반 디자인
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <!-- 카드 2 -->
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/3%EC%9B%9424%EC%9D%BC_2.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+
+                    <div class="card-content">
+
+                        <h3>고색고 홈페이지</h3>
+
+                        <p>
+                            감성적인 UI 디자인 프로젝트<br>
+                            카드 인터랙션 구현
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <!-- 카드 3 -->
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/3%EC%9B%9431%EC%9D%BC_3.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
+
+                    <div class="card-content">
+
+                        <h3>고색고 홈페이지 구현</h3>
+
+                        <p>
+                            모바일과 PC 대응<br>
+                            반응형 레이아웃 제작
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         4월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>4월</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/4%EC%9B%947%EC%9D%BC_2.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+
+                    <div class="card-content">
+
+                        <h3>카드 상호작용</h3>
+
+                        <p>
+                            인터랙션 중심 애니메이션<br>
+                            Hover 효과 구현
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/4%EC%9B%947%EC%9D%BC_5.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+                    <div class="card-content">
+
+                        <h3>도형</h3>
+
+                        <p>
+                            협업 기반 프로젝트<br>
+                            화면 구성 및 기능 구현
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/4%EC%9B%947%EC%9D%BC_7.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+
+                    <div class="card-content">
+
+                        <h3>애니메이션 응용</h3>
+
+                        <p>
+                            HTML/CSS/JS 활용<br>
+                            기능 중심 페이지 제작
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         5월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>3월(2)</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/3%EC%9B%9431%EC%9D%BC_2.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+
+                    <div class="card-content">
+
+                        <h3>메뉴</h3>
+
+                        <p>
+                            포트폴리오 메인 화면 제작<br>
+                            카드 UI 디자인
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/3%EC%9B%9431%EC%9D%BC_1.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+
+                    <div class="card-content">
+
+                        <h3>이름 아이디 비번</h3>
+
+                        <p>
+                            데이터 기반 대시보드<br>
+                            UI 구조 설계
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/20260317_02.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+
+                    <div class="card-content">
+
+                        <h3>줄 넘기기</h3>
+
+                        <p>
+                            창의적인 레이아웃 제작<br>
+                            색감 중심 디자인
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         6월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>수행 평가</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/5%EC%9B%9412%EC%9D%BC_1.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72">
+
+                    <div class="card-content">
+
+                        <h3>자기소개 연습</h3>
+
+                        <p>
+                            현대적인 웹 디자인<br>
+                            레이아웃 최적화
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" href="http://127.0.0.1:5500/projects/20260317_03.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f">
+
+                    <div class="card-content">
+
+                        <h3>레이아웃 태그</h3>
+
+                        <p>
+                            인터랙션 중심 제작<br>
+                            부드러운 애니메이션
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" href="http://127.0.0.1:5500/%EC%84%9C%EB%B8%8C%ED%8C%8C%EC%9D%BC1.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931">
+
+                    <div class="card-content">
+
+                        <h3>수행 2하다가 생긴서브파일</h3>
+
+                        <p>
+                            웹앱 스타일 프로젝트<br>
+                            다양한 기능 구현
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         푸터
+    ========================= -->
+
+    <div class="footer">
+        © 2026 PORTFOLIO DESIGN
+    </div>
+
+</div>
 
 </body>
 </html>
