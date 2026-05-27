@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if-else</title>
+<style>
+	.top-bar{
+
+    width:100%;
+
+    padding:30px 50px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#eef3f9;
+}
+
+/* 돌아가기 버튼 */
+
+.back-btn{
+
+    width:220px;
+    height:65px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:black;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:#3568ff;
+
+    box-shadow:
+        0 18px 35px rgba(53,104,255,0.35);
+}
+</style></head>
+<body><div class="top-bar">
+
+        <button class="back-btn"
+        onclick="location.href='../index.html'">
+
+            ← 메인으로 돌아가기
+
+        </button>
+
+    </div>
+<h3>if-else를 이용한 학점 매기기</h3>
+<hr>
+<script>
+	let grade;
+	let score = prompt("황기태 님 점수를 입력하세요", 100);
+	score = parseInt(score); // 문자열을 숫자로 바꿈
+	
+	// 이곳에 자바스크립트 코드를 작성하라.
+    if(score >= 90) grade='A';
+    else if(score >= 80) grade='B';
+    else grade='F';
+
+	
+	document.write(score + "는 " + grade + "입니다.<br>")
+</script>
+</body>
+</html>

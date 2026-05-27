@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>레이아웃태그</title>
+        <style>
+            #pname{
+                color: blue;
+            }
+            *{
+                color: brown;
+            }
+            .top-bar{
+
+    width:100%;
+
+    padding:30px 50px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#eef3f9;
+}
+
+/* 돌아가기 버튼 */
+
+.back-btn{
+
+    width:220px;
+    height:65px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:black;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:#3568ff;
+
+    box-shadow:
+        0 18px 35px rgba(53,104,255,0.35);
+}
+        </style>
+    </head>
+    <body><div class="top-bar">
+
+        <button class="back-btn"
+        onclick="location.href='../index.html'">
+
+            ← 메인으로 돌아가기
+
+        </button>
+
+    </div>
+        <header><h1 id="pname">my</h1><hr></header>
+        <div><p>dxcvbdcbv</p></div>
+        <div>
+            <ul>
+                <li>html.5</li>
+                <li>css3</li>
+                <li>javascript</li>
+            </ul>
+        </div>
+        <hr>
+        
+        <section><h1>dxcvbdcbv</h1>
+        <p>dfvsfjvhdjfvbjsdlfgvis</p> </section>
+
+        <hr>
+
+        <p>dfvsfjvhdjfvbjsdlfgvis</p>
+    </body>
+</html>
