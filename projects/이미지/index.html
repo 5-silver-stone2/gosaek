@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PORTFOLIO</title>
+
+<style>
+
+/* =========================
+   기본 설정
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Pretendard', sans-serif;
+}
+
+body{
+    background:#edf2f9;
+    overflow-x:hidden;
+    color:#222;
+}
+
+/* =========================
+   메인 페이지
+========================= */
+
+.container{
+    width:1300px;
+    margin:auto;
+    padding:50px 0;
+}
+
+/* =========================
+   타이틀
+========================= */
+
+.main-title{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.main-title h1{
+
+    display:inline-block;
+
+    padding:25px 100px;
+
+    background:linear-gradient(
+        135deg,
+        #4a90ff,
+        #5d6dff
+    );
+
+    color:white;
+
+    font-size:40px;
+    letter-spacing:4px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 40px rgba(74,144,255,0.3);
+}
+
+/* =========================
+   월 영역
+========================= */
+
+.month-section{
+    margin-bottom:80px;
+}
+
+.month-section h2{
+
+    margin-bottom:25px;
+
+    color:#304674;
+
+    font-size:30px;
+
+    border-bottom:3px solid #c8d8f0;
+
+    padding-bottom:10px;
+}
+
+/* =========================
+   카드 정렬
+========================= */
+
+.card-container{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   링크 스타일 제거
+========================= */
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================
+   카드
+========================= */
+
+.card{
+
+    width:380px;
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:0.35s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.08);
+
+    position:relative;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #4a90ff,
+        #6a5cff
+    );
+
+    transform:scaleX(0);
+
+    transition:0.35s;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.02);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,0.15);
+
+    background:#f8fbff;
+}
+
+.card:hover::before{
+    transform:scaleX(1);
+}
+
+/* =========================
+   이미지
+========================= */
+
+.card img{
+
+    width:100%;
+    height:230px;
+
+    object-fit:cover;
+}
+
+/* =========================
+   카드 텍스트
+========================= */
+
+.card-content{
+    padding:28px;
+}
+
+.card-content h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+    color:#2a3d68;
+}
+
+.card-content p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+/* 버튼 */
+
+.card-button{
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    background:#edf4ff;
+
+    color:#3d73ff;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.card:hover .card-button{
+
+    background:#4a90ff;
+    color:white;
+}
+
+/* =========================
+   푸터
+========================= */
+
+.footer{
+
+    margin-top:80px;
+
+    text-align:center;
+
+    color:#7a8aa8;
+}
+
+/* =========================
+   반응형
+========================= */
+
+@media(max-width:1400px){
+
+    .container{
+        width:95%;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .card-container{
+        flex-direction:column;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         메인 타이틀
+    ========================= -->
+
+    <div class="main-title">
+        <h1>PORTFOLIO</h1>
+    </div>
+
+    <!-- =========================
+         3월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>3월17일</h2>
+
+        <div class="card-container">
+
+            <!-- 카드 1 : 플레이리스트 -->
+
+            <a class="card-link"
+            href="projects/3월17일_1(플레이 리스트).html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f">
+
+                    <div class="card-content">
+
+                        <h3>플레이 리스트</h3>
+
+                        <p>
+                            음악 플레이 리스트 웹 프로젝트<br>
+                            HTML / CSS 기반 디자인
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <!-- 카드 2 -->
+
+            <a class="card-link" 
+            href="projects/20260317_02.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+
+                    <div class="card-content">
+
+                        <h3>레이아웃태그</h3>
+
+                        <p>
+                            3월 17일_2<br>
+                            div 와 span, ui 와 li
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <!-- 카드 3 -->
+
+            <a class="card-link" 
+            href="projects/20260317_03.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
+
+                    <div class="card-content">
+
+                        <h3>레이아웃태그</h3>
+
+                        <p>
+                            3월 17일_3<br>
+                            문자에 색입히기
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         3월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>3월24일</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" 
+            href="projects/3월24일_2.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+
+                    <div class="card-content">
+
+                        <h3>백그라운드 색입히기</h3>
+
+                        <p>
+                            3월 24일_1 + 3월 24일_2<br>
+                            백그라운드 효과 구현
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link"
+            href="projects/3월24일_3.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+                    <div class="card-content">
+
+                        <h3>고색고 배너</h3>
+
+                        <p>
+                            배운내용 활용 + 보더<br>
+                            보더 기능 구현
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/3월24일_4.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+
+                    <div class="card-content">
+
+                        <h3>개인정보 입력하기</h3>
+
+                        <p>
+                            이미지 와 영상 넣고 입력창 완성하기<br>
+                            이미지,동영상 삽입 및 input기능구현 + 파일 선택
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         3월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>3월31일</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" 
+            href="projects/3월31일_1.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+
+                    <div class="card-content">
+
+                        <h3>hover 과 입력창 변화</h3>
+
+                        <p>
+                            hover을 이용한 색변환과 input창 색 변경<br>
+                            input기능 응용 + hover
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/3월31일_2.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+
+                    <div class="card-content">
+
+                        <h3>태두리 변환</h3>
+
+                        <p>
+                            보더의 태두리를 둥글게 만드는법<br>
+                            border-radius를 이용한 보더 응용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/3월31일_3.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+
+                    <div class="card-content">
+
+                        <h3>고색고 페이지 구현</h3>
+
+                        <p>
+                            페이지 디자인<br>
+                            border-radius 응용 + 클레스를 이용해 위치지정
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         4월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>4월7일</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" 
+            href="projects/4월7일_5.html">
+
+                <div class="card">
+
+                    <img src="https://pimg.mk.co.kr/meet/neds/2020/09/image_readbot_2020_963918_16003764624360050.jpeg">
+
+                    <div class="card-content">
+
+                        <h3>색도형</h3>
+
+                        <p>
+                            도형 고정<br>
+                            position 이용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/4월7일_6.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVDJTg4JUIyJTIwJUVCJUIwJUIwJUVBJUIyJUJEfGVufDB8fDB8fHww">
+
+                    <div class="card-content">
+
+                        <h3>애니메이션</h3>
+
+                        <p>
+                            글자크기 키우기<br>
+                            애니메이션 스크립트 이용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/4월7일_7.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72">
+
+                    <div class="card-content">
+
+                        <h3>애니메이션</h3>
+
+                        <p>
+                            사진 이동<br>
+                            애니메이션 응용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         4월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>4월7일</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" 
+            href="projects/4월7일_1.html">
+
+                <div class="card">
+
+                    <img src="https://img.magnific.com/free-vector/blue-blocks-background_23-2147642403.jpg?semt=ais_hybrid&w=740&q=80">
+
+                    <div class="card-content">
+
+                        <h3>블록</h3>
+
+                        <p>
+                            블록 이용<br>
+                            display:inline-block등사용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/4월7일_2.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1541278107931-e006523892df?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUVEJThGJUFDJUVDJUJCJUE0JTIwJUVDJUI5JUI0JUVCJTkzJTlDfGVufDB8fDB8fHww">
+
+                    <div class="card-content">
+
+                        <h3>카드 들추기</h3>
+
+                        <p>
+                            마우스 hover시 카드 이동 시키기<br>
+                            relative 배치 이용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/4월7일_3.html">
+
+                <div class="card">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/8661/8661902.png">
+
+                    <div class="card-content">
+
+                        <h3>크리스마스 트리</h3>
+
+                        <p>
+                            절대배치<br>
+                            display 이용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         4월
+    ========================= -->
+
+    <section class="month-section">
+
+        <h2>4월21일</h2>
+
+        <div class="card-container">
+
+            <a class="card-link" 
+            href="projects/20260421_01.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f">
+
+                    <div class="card-content">
+
+                        <h3>자바 스크립트</h3>
+
+                        <p>
+                            마우스 over,out으로 사진 바꾸기<br>
+                            over,out사용
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/20260421_02.html">
+
+                <div class="card">
+
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/grepp-cloudfront/programmers_imgs/learn/thumb-course-javascript-webfrontend.jpg">
+
+                    <div class="card-content">
+
+                        <h3>자바 스크립트</h3>
+
+                        <p>
+                            버튼 클릭시 창에서 메시지 띄우기<br>
+                            자바 스크립트 구현
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <a class="card-link" 
+            href="projects/20260421_03.html">
+
+                <div class="card">
+
+                    <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931">
+
+                    <div class="card-content">
+
+                        <h3>if-else를 이용한 학점 매기기</h3>
+
+                        <p>
+                            <br>
+                            자바스크립트
+                        </p>
+
+                        <div class="card-button">
+                            프로젝트 보기 →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         푸터
+    ========================= -->
+
+    <div class="footer">
+        © 2026 PORTFOLIO DESIGN
+    </div>
+
+</div>
+
+</body>
+</html>
