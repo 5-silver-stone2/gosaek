@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>컴퓨터 · AI 진로 정보 - 진로결정 도우미</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="careers">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="진로결정 도우미 홈">
+      <span class="brand-mark">CD</span>
+      <span>진로결정 도우미</span>
+    </a>
+    <nav class="top-nav" aria-label="주요 메뉴">
+      <a href="index.html">메인</a>
+      <a href="survey.html">설문</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-band info-hero">
+      <div class="wide-layout info-hero-grid">
+        <div>
+          <p class="eyebrow">상세 1 페이지</p>
+          <h1>컴퓨터 · AI 계열 진로 정보</h1>
+          <p class="lead">대학, 성적 준비, 추천 과목, 자격증, 프로젝트까지 한 번에 비교할 수 있게 정리했습니다.</p>
+        </div>
+        <div class="metric-strip" aria-label="진로 정보 요약">
+          <div>
+            <strong>6</strong>
+            <span>추천 진로</span>
+          </div>
+          <div>
+            <strong>20</strong>
+            <span>설문 문항</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>준비 영역</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="wide-layout">
+        <div class="section-heading">
+          <p class="eyebrow">진로 비교</p>
+          <h2>어떤 일이 나와 맞는지 먼저 보기</h2>
+        </div>
+        <div id="careerLibrary" class="career-library"></div>
+      </div>
+    </section>
+
+    <section class="section-band contrast-band">
+      <div class="wide-layout two-column">
+        <div>
+          <p class="eyebrow">필요 성적</p>
+          <h2>성적은 숫자보다 방향이 중요합니다</h2>
+          <p class="body-copy">컴퓨터 관련 학과는 수학, 과학, 영어, 정보 과목의 기초가 중요합니다. 상위권 대학일수록 내신과 수능 모두 높은 수준을 요구하는 경우가 많고, 학생부종합전형에서는 프로젝트 기록과 탐구 활동의 깊이가 크게 작용합니다.</p>
+          <div class="stack-list">
+            <div class="plain-item">
+              <strong>상위권 목표</strong>
+              <span>수학 심화, 과학 탐구, 영어 독해, 알고리즘 문제 풀이를 꾸준히 기록합니다.</span>
+            </div>
+            <div class="plain-item">
+              <strong>중상위권 목표</strong>
+              <span>정보 과목 성취도, 교내 탐구, 동아리 프로젝트, GitHub 정리를 함께 준비합니다.</span>
+            </div>
+            <div class="plain-item">
+              <strong>실무형 목표</strong>
+              <span>전문대, 폴리텍, 부트캠프, 온라인 포트폴리오로 빠르게 결과물을 쌓습니다.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="subject-table-wrap">
+          <table class="info-table">
+            <caption>추천 과목과 이유</caption>
+            <thead>
+              <tr>
+                <th>과목</th>
+                <th>준비 이유</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>수학</td>
+                <td>알고리즘, AI 모델, 데이터 분석의 기본 언어입니다.</td>
+              </tr>
+              <tr>
+                <td>정보</td>
+                <td>프로그래밍, 자료구조, 컴퓨팅 사고를 직접 연습합니다.</td>
+              </tr>
+              <tr>
+                <td>과학</td>
+                <td>센서, 로봇, 그래픽스, 보안, 하드웨어 이해에 도움이 됩니다.</td>
+              </tr>
+              <tr>
+                <td>영어</td>
+                <td>문서, 논문, 오픈소스 자료 대부분을 읽는 데 필요합니다.</td>
+              </tr>
+              <tr>
+                <td>국어</td>
+                <td>문제 정의, 보고서 작성, 발표와 협업 설명력을 키웁니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="wide-layout">
+        <div class="section-heading">
+          <p class="eyebrow">자격증과 활동</p>
+          <h2>처음부터 큰 자격증만 노릴 필요는 없습니다</h2>
+        </div>
+        <div class="cert-grid">
+          <article class="cert-card">
+            <h3>입문 단계</h3>
+            <p>컴퓨터활용능력, ITQ, COS Pro, 리눅스마스터 2급처럼 학습 리듬을 만드는 자격이 좋습니다.</p>
+          </article>
+          <article class="cert-card">
+            <h3>전공 단계</h3>
+            <p>정보처리기사, SQLD, ADsP, 네트워크관리사, 정보보안기사 계열로 분야별 실력을 확인합니다.</p>
+          </article>
+          <article class="cert-card">
+            <h3>포트폴리오 단계</h3>
+            <p>웹 서비스, 데이터 분석 보고서, 보안 실습 기록, 게임 프로토타입처럼 결과물이 보이는 활동을 만듭니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band contrast-band">
+      <div class="wide-layout">
+        <div class="section-heading">
+          <p class="eyebrow">준비 로드맵</p>
+          <h2>1년 계획 예시</h2>
+        </div>
+        <ol class="timeline">
+          <li>
+            <span>1단계</span>
+            <strong>기초 문법과 컴퓨팅 사고</strong>
+            <p>Python 또는 JavaScript 하나를 골라 변수, 조건문, 반복문, 함수, 배열을 익힙니다.</p>
+          </li>
+          <li>
+            <span>2단계</span>
+            <strong>작은 프로젝트 3개</strong>
+            <p>계산기, 설문 결과 페이지, 간단한 게임처럼 완성 가능한 프로젝트를 배포합니다.</p>
+          </li>
+          <li>
+            <span>3단계</span>
+            <strong>분야별 심화</strong>
+            <p>AI, 데이터, 보안, 게임, 웹, 클라우드 중 한 분야를 골라 강의와 실습을 묶습니다.</p>
+          </li>
+          <li>
+            <span>4단계</span>
+            <strong>기록 정리</strong>
+            <p>프로젝트 목적, 사용 기술, 어려웠던 점, 개선한 점을 문서로 남깁니다.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-band" id="sources">
+      <div class="wide-layout">
+        <div class="section-heading">
+          <p class="eyebrow">자료 링크</p>
+          <h2>학교와 자격 정보는 공식 페이지에서 확인하기</h2>
+        </div>
+        <div class="source-list">
+          <a href="https://cse.snu.ac.kr/" target="_blank" rel="noreferrer">서울대학교 컴퓨터공학부</a>
+          <a href="https://cs.kaist.ac.kr/" target="_blank" rel="noreferrer">KAIST 전산학부</a>
+          <a href="https://sw.skku.edu/sw/index.do" target="_blank" rel="noreferrer">성균관대학교 소프트웨어융합대학</a>
+          <a href="https://www.q-net.or.kr/" target="_blank" rel="noreferrer">Q-Net 국가자격</a>
+          <a href="https://www.dataq.or.kr/" target="_blank" rel="noreferrer">데이터자격시험</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wide-layout footer-grid">
+      <p>입시 전형과 자격 시험 일정은 바뀔 수 있으므로 지원 전 최신 모집요강을 확인해야 합니다.</p>
+      <div class="footer-links">
+        <a href="index.html">메인</a>
+        <a href="survey.html">설문</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

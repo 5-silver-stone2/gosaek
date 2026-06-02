@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20문항 진로 설문 - 진로결정 도우미</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="survey">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="진로결정 도우미 홈">
+      <span class="brand-mark">CD</span>
+      <span>진로결정 도우미</span>
+    </a>
+    <nav class="top-nav" aria-label="주요 메뉴">
+      <a href="index.html">메인</a>
+      <a href="careers.html">진로 정보</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-band survey-hero">
+      <div class="wide-layout survey-head">
+        <div>
+          <p class="eyebrow">상세 2 페이지</p>
+          <h1>20문항 진로 설문</h1>
+          <p class="lead">답변을 바탕으로 AI, 소프트웨어, 데이터, 보안, 게임, 클라우드 중 가장 잘 맞는 진로를 추천합니다.</p>
+        </div>
+        <div class="progress-panel" aria-label="설문 진행률">
+          <strong id="surveyProgressText">0 / 20</strong>
+          <div class="progress-track">
+            <span id="surveyProgressBar"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="wide-layout">
+        <form id="surveyForm" class="survey-form"></form>
+        <div class="form-actions">
+          <button class="primary-button" type="submit" form="surveyForm">결과 보기</button>
+          <button class="secondary-button" type="button" id="surveyReset">초기화</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band result-band" id="surveyResult" hidden>
+      <div class="wide-layout">
+        <div id="resultSummary"></div>
+        <div id="resultDetail" class="career-detail-host"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wide-layout footer-grid">
+      <p>설문 결과는 자기이해를 돕는 참고용입니다. 실제 진로 선택은 성적, 흥미, 학습 환경을 함께 보며 결정하는 것이 좋습니다.</p>
+      <div class="footer-links">
+        <a href="index.html#recommendation-board">추천 보드</a>
+        <a href="careers.html">진로 정보</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
