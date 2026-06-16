@@ -1,855 +1,788 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PORTFOLIO</title>
-
-<style>
-
-/* =========================
-   기본 설정
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Pretendard', sans-serif;
-}
-
-body{
-    background:#edf2f9;
-    overflow-x:hidden;
-    color:#222;
-}
-
-/* =========================
-   메인 페이지
-========================= */
-
-.container{
-    width:1300px;
-    margin:auto;
-    padding:50px 0;
-}
-
-/* =========================
-   타이틀
-========================= */
-
-.main-title{
-    text-align:center;
-    margin-bottom:80px;
-}
-
-.main-title h1{
-
-    display:inline-block;
-
-    padding:25px 100px;
-
-    background:linear-gradient(
-        135deg,
-        #4a90ff,
-        #5d6dff
-    );
-
-    color:white;
-
-    font-size:40px;
-    letter-spacing:4px;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 15px 40px rgba(74,144,255,0.3);
-}
-
-/* =========================
-   월 영역
-========================= */
-
-.month-section{
-    margin-bottom:80px;
-}
-
-.month-section h2{
-
-    margin-bottom:25px;
-
-    color:#304674;
-
-    font-size:30px;
-
-    border-bottom:3px solid #c8d8f0;
-
-    padding-bottom:10px;
-}
-
-/* =========================
-   카드 정렬
-========================= */
-
-.card-container{
-    display:flex;
-    gap:35px;
-    flex-wrap:wrap;
-}
-
-/* =========================
-   링크 스타일 제거
-========================= */
-
-.card-link{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* =========================
-   카드
-========================= */
-
-.card{
-
-    width:380px;
-
-    background:white;
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
-    transition:0.35s ease;
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,0.08);
-
-    position:relative;
-}
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:5px;
-
-    background:linear-gradient(
-        90deg,
-        #4a90ff,
-        #6a5cff
-    );
-
-    transform:scaleX(0);
-
-    transition:0.35s;
-}
-
-.card:hover{
-
-    transform:
-        translateY(-12px)
-        scale(1.02);
-
-    box-shadow:
-        0 25px 45px rgba(0,0,0,0.15);
-
-    background:#f8fbff;
-}
-
-.card:hover::before{
-    transform:scaleX(1);
-}
-
-/* =========================
-   이미지
-========================= */
-
-.card img{
-
-    width:100%;
-    height:230px;
-
-    object-fit:cover;
-}
-
-/* =========================
-   카드 텍스트
-========================= */
-
-.card-content{
-    padding:28px;
-}
-
-.card-content h3{
-
-    font-size:28px;
-
-    margin-bottom:15px;
-
-    color:#2a3d68;
-}
-
-.card-content p{
-
-    color:#666;
-
-    line-height:1.7;
-
-    margin-bottom:20px;
-}
-
-/* 버튼 */
-
-.card-button{
-
-    display:inline-block;
-
-    padding:12px 24px;
-
-    background:#edf4ff;
-
-    color:#3d73ff;
-
-    border-radius:12px;
-
-    font-weight:bold;
-
-    transition:0.3s;
-}
-
-.card:hover .card-button{
-
-    background:#4a90ff;
-    color:white;
-}
-
-/* =========================
-   푸터
-========================= */
-
-.footer{
-
-    margin-top:80px;
-
-    text-align:center;
-
-    color:#7a8aa8;
-}
-
-/* =========================
-   반응형
-========================= */
-
-@media(max-width:1400px){
-
-    .container{
-        width:95%;
-    }
-
-    .card{
-        width:100%;
-    }
-
-    .card-container{
-        flex-direction:column;
-    }
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메일링 에이전트 AI</title>
+    <style>
+        /* ========== Reset & Base ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-gradient-start: #1a2a6c;
+            --bg-gradient-end: #b21f1f;
+            --chat-bg: #f0f2f5;
+            --user-bubble: #1a2a6c;
+            --user-text: #ffffff;
+            --ai-bubble: #ffffff;
+            --ai-text: #2d3748;
+            --input-bg: #ffffff;
+            --input-border: #e2e8f0;
+            --input-text: #2d3748;
+            --header-bg: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            --header-text: #ffffff;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            --bubble-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            --time-color: #a0aec0;
+            --scrollbar-thumb: #cbd5e0;
+            --scrollbar-track: transparent;
+            --tao-bg: #1e293b;
+            --tao-text: #e2e8f0;
+            --tao-thought: #f59e0b;
+            --tao-action: #3b82f6;
+            --tao-observation: #10b981;
+            --tool-badge-ask: #8b5cf6;
+            --tool-badge-compose: #06b6d4;
+            --tool-badge-send: #ef4444;
+            --suggest-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --modal-overlay: rgba(0, 0, 0, 0.5);
+            --modal-bg: #ffffff;
+            --modal-text: #1a202c;
+            --btn-primary: #1a2a6c;
+            --btn-danger: #dc2626;
+            --btn-success: #16a34a;
+            --btn-cancel: #6b7280;
+            --welcome-bg: linear-gradient(135deg, #1a2a6c, #b21f1f);
+        }
+
+        [data-theme="dark"] {
+            --bg-gradient-start: #0f0f23;
+            --bg-gradient-end: #1a1a2e;
+            --chat-bg: #0f172a;
+            --user-bubble: #3b82f6;
+            --user-text: #ffffff;
+            --ai-bubble: #1e293b;
+            --ai-text: #e2e8f0;
+            --input-bg: #1e293b;
+            --input-border: #334155;
+            --input-text: #e2e8f0;
+            --header-bg: linear-gradient(135deg, #0f0f23, #1a1a2e);
+            --header-text: #e2e8f0;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --bubble-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            --time-color: #64748b;
+            --scrollbar-thumb: #334155;
+            --tao-bg: #0f172a;
+            --tao-text: #94a3b8;
+            --tao-thought: #fbbf24;
+            --tao-action: #60a5fa;
+            --tao-observation: #34d399;
+            --tool-badge-ask: #a78bfa;
+            --tool-badge-compose: #22d3ee;
+            --tool-badge-send: #f87171;
+            --suggest-bg: #1e293b;
+            --border-color: #334155;
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+            --modal-bg: #1e293b;
+            --modal-text: #e2e8f0;
+            --btn-primary: #3b82f6;
+            --btn-danger: #ef4444;
+            --btn-success: #22c55e;
+            --btn-cancel: #6b7280;
+            --welcome-bg: linear-gradient(135deg, #0f0f23, #1a1a2e);
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            transition: background 0.4s ease;
+            padding: 16px;
+        }
+
+        /* ========== Main Layout ========== */
+        .app-container {
+            width: 100%;
+            max-width: 960px;
+            height: min(800px, 95vh);
+            display: flex;
+            gap: 12px;
+            position: relative;
+        }
+
+        /* ========== TAO Panel (Left) ========== */
+        .tao-panel {
+            width: 320px;
+            flex-shrink: 0;
+            background: var(--tao-bg);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: background 0.4s ease;
+        }
+
+        .tao-header {
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+        }
+
+        .tao-header h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #f1f5f9;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tao-header h2 span {
+            font-size: 16px;
+        }
+
+        .tao-header .sub {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 3px;
+        }
+
+        .tao-log {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .tao-log::-webkit-scrollbar {
+            width: 4px;
+        }
+        .tao-log::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .tao-log::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+
+        .tao-entry {
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            line-height: 1.5;
+            animation: tao-in 0.3s ease-out;
+            border-left: 3px solid transparent;
+        }
+
+        @keyframes tao-in {
+            from { opacity: 0; transform: translateX(-8px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .tao-entry.thought {
+            background: rgba(245, 158, 11, 0.08);
+            border-left-color: var(--tao-thought);
+        }
+        .tao-entry.action {
+            background: rgba(59, 130, 246, 0.08);
+            border-left-color: var(--tao-action);
+        }
+        .tao-entry.observation {
+            background: rgba(16, 185, 129, 0.08);
+            border-left-color: var(--tao-observation);
+        }
+
+        .tao-entry .tao-label {
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 2px;
+        }
+
+        .tao-entry.thought .tao-label { color: var(--tao-thought); }
+        .tao-entry.action .tao-label { color: var(--tao-action); }
+        .tao-entry.observation .tao-label { color: var(--tao-observation); }
+
+        .tao-entry .tao-text {
+            color: var(--tao-text);
+            word-break: break-word;
+        }
+
+        .tao-empty {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-size: 13px;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .tao-empty .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Tool Badge */
+        .tool-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #fff;
+            letter-spacing: 0.3px;
+            margin-right: 4px;
+        }
+        .tool-badge.ask { background: var(--tool-badge-ask); }
+        .tool-badge.compose { background: var(--tool-badge-compose); }
+        .tool-badge.send { background: var(--tool-badge-send); }
+
+        /* ========== Chat Container (Right) ========== */
+        .chat-container {
+            flex: 1;
+            background: var(--chat-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+            min-width: 0;
+        }
+
+        /* ========== Header ========== */
+        .chat-header {
+            background: var(--header-bg);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .header-info h1 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--header-text);
+            letter-spacing: -0.3px;
+        }
+
+        .header-info .status {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 1px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #48bb78;
+            display: inline-block;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .header-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--header-text);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .header-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .header-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Stop button - distinct style */
+        .stop-btn {
+            background: rgba(239, 68, 68, 0.4);
+            border: 1px solid rgba(239, 68, 68, 0.6);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .stop-btn:hover {
+            background: rgba(239, 68, 68, 0.7);
+            transform: scale(1.05);
+        }
+
+        .stop-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ========== Chat Messages Area ========== */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px 18px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+        .chat-messages::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 10px;
+        }
+
+        /* ========== Message Bubbles ========== */
+        .message {
+            display: flex;
+            max-width: 92%;
+            animation: message-in 0.35s ease-out;
+            position: relative;
+        }
+
+        @keyframes message-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .message.ai {
+            align-self: flex-start;
+        }
+
+        .message-content {
+            padding: 11px 16px;
+            border-radius: 18px;
+            font-size: 14.5px;
+            line-height: 1.55;
+            word-break: break-word;
+            box-shadow: var(--bubble-shadow);
+            position: relative;
+        }
+
+        .message.user .message-content {
+            background: var(--user-bubble);
+            color: var(--user-text);
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.ai .message-content {
+            background: var(--ai-bubble);
+            color: var(--ai-text);
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .message.user .message-avatar {
+            margin-left: 8px;
+            background: var(--user-bubble);
+            color: #fff;
+        }
+
+        .message.ai .message-avatar {
+            margin-right: 8px;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            color: #fff;
+        }
+
+        .message-time {
+            font-size: 10.5px;
+            color: var(--time-color);
+            margin-top: 3px;
+            padding: 0 4px;
+        }
+
+        .message.user .message-time {
+            text-align: right;
+        }
+
+        /* ========== Draft Preview in Message ========== */
+        .draft-preview {
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin: 8px 0 4px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .draft-preview .label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--tool-badge-compose);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .draft-preview .field {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+
+        .draft-preview .field-name {
+            font-weight: 600;
+            color: var(--ai-text);
+            min-width: 50px;
+        }
+
+        .draft-preview .field-value {
+            color: var(--ai-text);
+            word-break: break-all;
+        }
+
+        /* ========== Action Buttons ========== */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 7px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-primary {
+            background: var(--btn-primary);
+            color: #fff;
+        }
+
+        .btn-success {
+            background: var(--btn-success);
+            color: #fff;
+        }
+
+        .btn-danger {
+            background: var(--btn-danger);
+            color: #fff;
+        }
+
+        .btn-cancel {
+            background: var(--btn-cancel);
+            color: #fff;
+        }
+
+        /* ========== Typing Indicator ========== */
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            padding: 12px 18px;
+            background: var(--ai-bubble);
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            box-shadow: var(--bubble-shadow);
+            gap: 4px;
+            animation: message-in 0.3s ease-out;
+            transition: background 0.4s ease;
+        }
+
+        .typing-indicator.active {
+            display: flex;
+        }
+
+        .typing-indicator span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--input-text);
+            opacity: 0.4;
+            animation: typing-bounce 1.4s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(1) { animation-delay: 0s; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing-bounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-7px); opacity: 0.8; }
+        }
+
+        /* ========== Input Area ========== */
+        .chat-input-area {
+            padding: 14px 18px 18px;
+            background: var(--chat-bg);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 11px 16px;
+            border: 2px solid var(--input-border);
+            border-radius: 12px;
+            font-size: 14px;
+            outline: none;
+            background: var(--input-bg);
+            color: var(--input-text);
+            transition: border-color 0.3s ease, background 0.4s ease, color 0.4s ease;
+            font-family: inherit;
+        }
+
+        .chat-input-area input::placeholder {
+            color: var(--time-color);
+        }
+
+        .chat-input-area input:focus {
+            border-color: #3b82f6;
+        }
+
+        .send-btn {
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(26, 42, 108, 0.4);
+        }
+
+        .send-btn:active {
+            transform: scale(0.95);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 720px) {
+            body { padding: 0; }
+            .app-container {
+                max-width: 100%;
+                height: 100vh;
+                flex-direction: column;
+                gap: 0;
+                border-radius: 0;
+            }
+            .tao-panel {
+                width: 100%;
+                height: 35vh;
+                border-radius: 0;
+                flex-shrink: 0;
+            }
+            .chat-container {
+                height: 65vh;
+                border-radius: 0;
+            }
+            .message { max-width: 95%; }
+            .chat-messages { padding: 14px 12px 6px; }
+            .chat-input-area { padding: 10px 12px 14px; }
+        }
+
+        @media (min-width: 721px) and (max-width: 960px) {
+            .tao-panel {
+                width: 260px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="app-container">
 
-    <!-- =========================
-         메인 타이틀
-    ========================= -->
-
-    <div class="main-title">
-        <h1>PORTFOLIO</h1>
-    </div>
-
-    <!-- =========================
-         3월
-    ========================= -->
-
-    <section class="month-section">
-
-        <h2>3월17일</h2>
-
-        <div class="card-container">
-
-            <!-- 카드 1 : 플레이리스트 -->
-
-            <a class="card-link"
-            href="projects/3월17일_1(플레이 리스트).html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f">
-
-                    <div class="card-content">
-
-                        <h3>플레이 리스트</h3>
-
-                        <p>
-                            음악 플레이 리스트 웹 프로젝트<br>
-                            HTML / CSS 기반 디자인
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
+        <!-- ========== TAO PANEL (Left) ========== -->
+        <div class="tao-panel" id="taoPanel">
+            <div class="tao-header">
+                <h2><span>🧠</span> TAO 실행 기록</h2>
+                <div class="sub">Thought · Action · Observation</div>
+            </div>
+            <div class="tao-log" id="taoLog">
+                <div class="tao-empty" id="taoEmpty">
+                    <div>
+                        <span class="icon">💡</span>
+                        메시지를 보내면<br>에이전트의 TAO가<br>여기에 기록됩니다
                     </div>
-
                 </div>
-
-            </a>
-
-            <!-- 카드 2 -->
-
-            <a class="card-link" 
-            href="projects/20260317_02.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
-
-                    <div class="card-content">
-
-                        <h3>레이아웃태그</h3>
-
-                        <p>
-                            3월 17일_2<br>
-                            div 와 span, ui 와 li
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <!-- 카드 3 -->
-
-            <a class="card-link" 
-            href="projects/20260317_03.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-
-                    <div class="card-content">
-
-                        <h3>레이아웃태그</h3>
-
-                        <p>
-                            3월 17일_3<br>
-                            문자에 색입히기
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
+            </div>
         </div>
 
-    </section>
+        <!-- ========== CHAT CONTAINER (Right) ========== -->
+        <div class="chat-container">
 
-    <!-- =========================
-         3월
-    ========================= -->
-
-    <section class="month-section">
-
-        <h2>3월24일</h2>
-
-        <div class="card-container">
-
-            <a class="card-link" 
-            href="projects/3월24일_2.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
-
-                    <div class="card-content">
-
-                        <h3>백그라운드 색입히기</h3>
-
-                        <p>
-                            3월 24일_1 + 3월 24일_2<br>
-                            백그라운드 효과 구현
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="header-left">
+                    <div class="avatar">📧</div>
+                    <div class="header-info">
+                        <h1>메일링 에이전트 AI</h1>
+                        <span class="status">
+                            <span class="status-dot"></span>
+                            메일 작성 도우미
+                        </span>
                     </div>
-
                 </div>
-
-            </a>
-
-            <a class="card-link"
-            href="projects/3월24일_3.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-
-                    <div class="card-content">
-
-                        <h3>고색고 배너</h3>
-
-                        <p>
-                            배운내용 활용 + 보더<br>
-                            보더 기능 구현
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
+                <div class="header-actions">
+                    <button class="stop-btn" id="stopBtn" title="비상 정지" aria-label="비상 정지">🛑</button>
+                    <button class="header-btn" id="themeToggle" title="테마 변경" aria-label="테마 변경">🌙</button>
+                    <button class="header-btn" id="clearChat" title="대화 초기화" aria-label="대화 초기화">🗑️</button>
                 </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/3월24일_4.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
-
-                    <div class="card-content">
-
-                        <h3>개인정보 입력하기</h3>
-
-                        <p>
-                            이미지 와 영상 넣고 입력창 완성하기<br>
-                            이미지,동영상 삽입 및 input기능구현 + 파일 선택
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- =========================
-         3월
-    ========================= -->
-
-    <section class="month-section">
-
-        <h2>3월31일</h2>
-
-        <div class="card-container">
-
-            <a class="card-link" 
-            href="projects/3월31일_1.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
-
-                    <div class="card-content">
-
-                        <h3>hover 과 입력창 변화</h3>
-
-                        <p>
-                            hover을 이용한 색변환과 input창 색 변경<br>
-                            input기능 응용 + hover
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/3월31일_2.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-
-                    <div class="card-content">
-
-                        <h3>태두리 변환</h3>
-
-                        <p>
-                            보더의 태두리를 둥글게 만드는법<br>
-                            border-radius를 이용한 보더 응용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/3월31일_3.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
-
-                    <div class="card-content">
-
-                        <h3>고색고 페이지 구현</h3>
-
-                        <p>
-                            페이지 디자인<br>
-                            border-radius 응용 + 클레스를 이용해 위치지정
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- =========================
-         4월
-    ========================= -->
-
-    <section class="month-section">
-
-        <h2>4월7일</h2>
-
-        <div class="card-container">
-
-            <a class="card-link" 
-            href="projects/4월7일_5.html">
-
-                <div class="card">
-
-                    <img src="https://pimg.mk.co.kr/meet/neds/2020/09/image_readbot_2020_963918_16003764624360050.jpeg">
-
-                    <div class="card-content">
-
-                        <h3>색도형</h3>
-
-                        <p>
-                            도형 고정<br>
-                            position 이용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/4월7일_6.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVDJTg4JUIyJTIwJUVCJUIwJUIwJUVBJUIyJUJEfGVufDB8fDB8fHww">
-
-                    <div class="card-content">
-
-                        <h3>애니메이션</h3>
-
-                        <p>
-                            글자크기 키우기<br>
-                            애니메이션 스크립트 이용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/4월7일_7.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72">
-
-                    <div class="card-content">
-
-                        <h3>애니메이션</h3>
-
-                        <p>
-                            사진 이동<br>
-                            애니메이션 응용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- =========================
-         4월
-    ========================= -->
-
-    <section class="month-section">
-
-        <h2>4월7일</h2>
-
-        <div class="card-container">
-
-            <a class="card-link" 
-            href="projects/4월7일_1.html">
-
-                <div class="card">
-
-                    <img src="https://img.magnific.com/free-vector/blue-blocks-background_23-2147642403.jpg?semt=ais_hybrid&w=740&q=80">
-
-                    <div class="card-content">
-
-                        <h3>블록</h3>
-
-                        <p>
-                            블록 이용<br>
-                            display:inline-block등사용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/4월7일_2.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1541278107931-e006523892df?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUVEJThGJUFDJUVDJUJCJUE0JTIwJUVDJUI5JUI0JUVCJTkzJTlDfGVufDB8fDB8fHww">
-
-                    <div class="card-content">
-
-                        <h3>카드 들추기</h3>
-
-                        <p>
-                            마우스 hover시 카드 이동 시키기<br>
-                            relative 배치 이용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/4월7일_3.html">
-
-                <div class="card">
-
-                    <img src="https://cdn-icons-png.flaticon.com/512/8661/8661902.png">
-
-                    <div class="card-content">
-
-                        <h3>크리스마스 트리</h3>
-
-                        <p>
-                            절대배치<br>
-                            display 이용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- =========================
-         4월
-    ========================= -->
-
-    <section class="month-section">
-
-        <h2>4월21일</h2>
-
-        <div class="card-container">
-
-            <a class="card-link" 
-            href="projects/20260421_01.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f">
-
-                    <div class="card-content">
-
-                        <h3>자바 스크립트</h3>
-
-                        <p>
-                            마우스 over,out으로 사진 바꾸기<br>
-                            over,out사용
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/20260421_02.html">
-
-                <div class="card">
-
-                    <img src="https://s3.ap-northeast-2.amazonaws.com/grepp-cloudfront/programmers_imgs/learn/thumb-course-javascript-webfrontend.jpg">
-
-                    <div class="card-content">
-
-                        <h3>자바 스크립트</h3>
-
-                        <p>
-                            버튼 클릭시 창에서 메시지 띄우기<br>
-                            자바 스크립트 구현
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-            <a class="card-link" 
-            href="projects/20260421_03.html">
-
-                <div class="card">
-
-                    <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931">
-
-                    <div class="card-content">
-
-                        <h3>if-else를 이용한 학점 매기기</h3>
-
-                        <p>
+            </div>
+
+            <!-- Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome message -->
+                <div class="message ai">
+                    <div class="message-avatar">📧</div>
+                    <div>
+                        <div class="message-content">
+                            <strong>메일링 에이전트 AI</strong><br>
+                            안녕하세요! 📬 저는 메일 작성을 도와주는 AI 비서입니다.<br>
                             <br>
-                            자바스크립트
-                        </p>
-
-                        <div class="card-button">
-                            프로젝트 보기 →
+                            예를 들어 이렇게 말씀해주세요:<br>
+                            • <em>"홍길동님께 프로젝트 회의 메일 보내줘"</em><br>
+                            • <em>"김철수에게 입사 지원 관련 메일 작성해줘"</em><br>
+                            • <em>"오후 3시 미팅 관련 메일 보내려고 해"</em>
                         </div>
-
+                        <div class="message-time">방금 전</div>
                     </div>
-
                 </div>
+            </div>
 
-            </a>
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span><span></span><span></span>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="메일 작성 요청을 입력하세요..." autocomplete="off" maxlength="500">
+                <button class="send-btn" id="sendBtn" aria-label="전송">➤</button>
+            </div>
 
         </div>
-
-    </section>
-
-    <!-- =========================
-         푸터
-    ========================= -->
-
-    <div class="footer">
-        © 2026 PORTFOLIO DESIGN
     </div>
 
-</div>
+    <!-- Scripts — 순서 중요: guardrails → tools → app -->
+    <script src="guardrails.js"></script>
+    <script src="tools.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>
