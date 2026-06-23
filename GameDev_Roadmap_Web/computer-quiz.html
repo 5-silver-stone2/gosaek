@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>컴퓨터공학 문제풀이 - 진로결정 도우미</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="quiz.js" defer></script>
+</head>
+<body data-page="quiz">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="진로결정 도우미 홈">
+      <span class="brand-mark">CD</span>
+      <span>진로결정 도우미</span>
+    </a>
+    <nav class="top-nav" aria-label="주요 메뉴">
+      <a href="index.html">메인</a>
+      <a href="careers.html">진로 정보</a>
+      <a href="survey.html">설문</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-band quiz-hero">
+      <div class="wide-layout survey-head">
+        <div>
+          <p class="eyebrow">고등학교 2~3학년 권장</p>
+          <h1>컴퓨터공학 문제풀이</h1>
+          <p class="lead">프로그래밍부터 자료구조, 알고리즘, 운영체제, 네트워크, 데이터베이스까지 핵심 개념을 점검합니다. 제출 후에만 정답과 상세 해설을 볼 수 있습니다.</p>
+        </div>
+        <div class="quiz-status-card" aria-label="문제 구성">
+          <div><strong>20</strong><span>전체 문항</span></div>
+          <div><strong>15</strong><span>객관식</span></div>
+          <div><strong>5</strong><span>서술형</span></div>
+          <div><strong>100</strong><span>총점</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-toolbar-wrap" aria-label="풀이 진행 상황">
+      <div class="wide-layout quiz-toolbar">
+        <div>
+          <strong id="quizProgressText">0 / 20 완료</strong>
+          <span>모든 문항에 답하면 결과를 확인할 수 있습니다.</span>
+        </div>
+        <div class="progress-track">
+          <span id="quizProgressBar"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="wide-layout">
+        <div class="quiz-guide">
+          <strong>채점 안내</strong>
+          <p>객관식은 문항당 4점입니다. 서술형은 핵심 개념을 설명하는 용어를 기준으로 문항당 8점까지 자동 채점하며, 결과에서 모범답안과 비교할 수 있습니다.</p>
+        </div>
+        <form id="computerQuizForm" class="survey-form quiz-form"></form>
+        <div class="form-actions">
+          <button class="primary-button" type="submit" form="computerQuizForm">채점하고 해설 보기</button>
+          <button class="secondary-button" type="button" id="quizReset">처음부터 다시 풀기</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band quiz-result-band" id="quizResult" hidden>
+      <div class="wide-layout">
+        <div id="quizSummary"></div>
+        <div class="section-heading quiz-review-heading">
+          <p class="eyebrow">전체 문항 복습</p>
+          <h2>정답과 상세 해설</h2>
+          <p>맞힌 문제도 설명을 읽고, 개념을 자신의 말로 다시 정리해 보세요.</p>
+        </div>
+        <div id="quizReview" class="quiz-review"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wide-layout footer-grid">
+      <p>자동 채점 결과는 학습 방향을 잡기 위한 참고 자료입니다. 서술형 답안은 교사나 학습자와 함께 다시 검토하면 더 정확합니다.</p>
+      <div class="footer-links">
+        <a href="careers.html">진로 정보</a>
+        <a href="survey.html">진로 설문</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
